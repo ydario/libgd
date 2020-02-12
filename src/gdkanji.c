@@ -355,7 +355,7 @@ do_convert (unsigned char **to_p, unsigned char **from_p, const char *code)
 	from_len = strlen ((const char *)from) + 1;
 	to_len = BUFSIZ;
 
-	if ((int) (iconv (cd, (char **)from_p, &from_len, (char **)to_p, &to_len))
+	if ((int) (iconv (cd, (const char **)from_p, &from_len, (char **)to_p, &to_len))
 	        == -1) {
 #ifdef HAVE_ERRNO_H
 		if (errno == EINVAL)
